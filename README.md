@@ -29,6 +29,7 @@
   </li>
 </ol>
 <h1>Q-Learning Process</h1>
+<img src="qLearningSteps.png"/>
 The Q-Learning algorithm follows these steps:
 <ul>
   <li><b>Initialize the Q-Table:</b>The Q-Table is a data structure that stores the Q-values for each state-action pair. It is initialized with random values or zeros, depending on the problem. The size of the Q-Table is determined by the number of states and actions in the environment.</li>
@@ -37,6 +38,7 @@ The Q-Learning algorithm follows these steps:
   <li><b>Measure Reward:</b>After performing the action, the agent receives a reward from the environment based on the action taken and the resulting state. The reward could be positive, negative, or zero, depending on the task and the environment's dynamics.</li>
   <li><b>Update Q-Table:</b>Using the observed reward and the next state, the agent updates the Q-value for the previous state-action pair using the Bellman equation</li>
 </ul>
+
 
 
 
