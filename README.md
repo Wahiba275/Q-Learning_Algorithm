@@ -1,13 +1,27 @@
-# Q-Learning_Algorithm
-<h1>Introduction</h1>
+# Q-Learning Algorithm
+<h1>Table of contents</h1>
+<ul>
+  <li><a href="#intro">Introduction</a></li>
+  <li><a href="#Background">Background</a></li>
+  <li><a href="#Components">Key Components of Q-Learning</a></li>
+  <li><a href="#Process">Q-Learning Process</a></li>
+  <li><a href="#demo">Demonstration</a>
+    <ul>
+    <li><a href="#str">Structure</a></li>
+      <li><a href="#execution">Example of execution</a></li>
+    </ul>
+  </li>
+  <li><a href="#Conclusion">Conclusion</a></li>
+</ul>
+<h1 id="intro">Introduction</h1>
 <p>The Q-Learning algorithm is a reinforcement learning technique used to solve complex decision-making problems. 
   It enables an agent to learn optimal strategies by interacting with an environment through a trial-and-error process. 
   This report provides an overview of the Q-Learning algorithm, its key components, and its applications.</p>
-<h1>Background</h1>
+<h1 id="Background">Background</h1>
 <p>Reinforcement learning involves training an agent to make sequential decisions in an environment to maximize its cumulative reward. Q-Learning is a model-free,
   off-policy algorithm that does not require a model of the environment. 
   Instead, it learns an action-value function, often called Q-values, which represents the expected reward for taking a particular action in a given state.</p>
-<h1>Key Components of Q-Learning</h1>
+<h1 id="Components">Key Components of Q-Learning</h1>
 <ol>
   <li><b>State and Action Space : </b>
   Q-Learning operates in an environment characterized by states and actions. The state space represents the possible configurations or observations of the environment, while the action space represents the available actions the agent can take in each state.
@@ -28,7 +42,7 @@
     </ul>
   </li>
 </ol>
-<h1>Q-Learning Process</h1>
+<h1 id="Process">Q-Learning Process</h1>
 <img src="qLearningSteps.png"/>
 The Q-Learning algorithm follows these steps:
 <ul>
@@ -39,11 +53,13 @@ The Q-Learning algorithm follows these steps:
   <li><b>Update Q-Table:</b>Using the observed reward and the next state, the agent updates the Q-value for the previous state-action pair using the Bellman equation</li>
 </ul>
 
-
-
-
-
-
+<h1 id="demo">Demonstration</h1>
+<h4 id="str">Structure</h4>
+<img src="str1.PNG"/>
+<h4 id="execution">Example of execution</h4>
+<img src="demo.PNG"/>
+<h1 id="Conclusion">Conclusion</h1>
+<p>The Q-Learning algorithm is a powerful technique for training agents to make optimal decisions in complex environments. By learning action-value</p>
 
 
 
