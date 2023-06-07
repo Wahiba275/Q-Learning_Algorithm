@@ -5,14 +5,26 @@
   <li><a href="#Background">Background</a></li>
   <li><a href="#Components">Key Components of Q-Learning</a></li>
   <li><a href="#Process">Q-Learning Process</a></li>
-  <li><a href="#part1">Part-1: Q-Learning Algorithm (Sequential Version)</a></li>
-  <li><a href="#sma">Part-2: Multi-Agent Systems and Q-Learning</a></li>
+  <li><a href="#part1">Part-1: Q-Learning Algorithm (Sequential Version)</a>
+    <ul>
+      <li><a href="#str">Structure</a></li>
+      <li><a href="#execution">Example of execution</a></li>
+    </ul>
+  </li>
+  <li><a href="#part2">Part-2: Multi-Agent Systems and Q-Learning</a>
+    <ul>
+    <li><a href="#main">Main Container</a></li>
+      <li><a href="#simple">Simple Container</a></li>
+      <li><a href="#agent">QLearning Agent</a></li>
+      <li><a href="#demo">Demonstration</a>
+        <ul>
+        <li><a href="#jade">Jade Interface</a></li>
+          <li><a href="#Execution">Execution</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
   <li><a href="#Conclusion">Conclusion</a></li>
-</ul>
-<h1>Table of Figures</h1>
-<ul>
-  <li><a>Figure 1:  </a></li>
-  <li><a>Figure 1:  </a></li>
 </ul>
 <h1 id="intro">Introduction</h1>
 
@@ -58,38 +70,51 @@ The Q-Learning algorithm follows these steps:
   <li><b>Measure Reward:</b>After performing the action, the agent receives a reward from the environment based on the action taken and the resulting state. The reward could be positive, negative, or zero, depending on the task and the environment's dynamics.</li>
   <li><b>Update Q-Table:</b>Using the observed reward and the next state, the agent updates the Q-value for the previous state-action pair using the Bellman equation</li>
 </ul>
-<h1 id=""part1>Part-1: Q-Learning Algorithm (Sequential Version)</h1>
+<h1 id="part1">Part-1: Q-Learning Algorithm (Sequential Version)</h1>
 <ul>
-  <li><h3 id="str">Structure</h3><img src="str1.PNG"/>
+  <li><h3 id="str">Structure</h3><img src="/QLearning/str.PNG"/>
   </li>
   <li><h3 id="execution">Example of execution</h3><img src="demo.PNG"/>
   </li> 
 </ul>
-<h1>Part-2: Multi-Agent Systems and Q-Learning</h1>
+<h1 id="part2">Part-2: Multi-Agent Systems and Q-Learning</h1>
 <ul>
   <li><h3 id="main">Main Container</h3>
-  <img src="main" />
+  <img src="/QLearning/main.PNG" />
     <p>The <b>MainContainer</b> class contains a main method, which is the entry point for the program. It starts by obtaining an instance of the JADE runtime using the <b>Runtime.instance()</b> method.
       A <b>ProfileImpl</b> object is created to specify the configuration parameters for the JADE platform. In this case, the parameter <b>Profile.GUI</b> is set to <b>"true"</b>, indicating that a graphical user interface (GUI) should be displayed for the main container.
-
-      The <b>AgentContainer</b> is then created using the <b>createMainContainer</b> method of the runtime, passing the <b>profile</b> as a parameter. This creates the main container that will host the agents in the system.
+ The <b>AgentContainer</b> is then created using the <b>createMainContainer</b> method of the runtime, passing the <b>profile</b> as a parameter. This creates the main container that will host the agents in the system.
       Finally, the <b>start</b> method is called on the main container to start its execution. This will initialize the JADE platform and make it ready to host and manage the agents in the system.</p>
   </li>
    <li><h3 id="simple">Simple Container</h3>
-     <img src="simple.PNG" />
+     <img src="/QLearning/simple.PNG" />
      <p><b>Simple container</b> class for a multi-agent system using the JADE platform. It creates a JADE runtime instance, sets the main host parameter to <b>"localhost"</b>, creates an agent container, creates a specific agent within the container <b>(named "QLearningAgent")</b>, and starts the execution of the agent. This code serves as a basic setup for hosting and running agents in a multi-agent system using JADE.</p>
   </li>
   <li><h3 id="agent">QLearning Agent</h3>
-    <img src="simple.PNG" />
      <p>It represents a Q-learning agent implementation for a grid-based environment. The agent extends the <b>Agent class</b> from the JADE platform and defines the Q-learning algorithm within the <b>QLearningBehaviour class</b>, which extends the <b>SimpleBehaviour class</b>.</p>
     <p>The agent's Q-learning algorithm is applied to a grid with a size of 3x3. The agent maintains a Q-table to store the Q-values for each state-action pair. The agent uses the epsilon-greedy strategy to choose actions, balancing exploration and exploitation. The Q-values are updated based on the reward received and the maximum Q-value of the next state. The Q-learning process iterates for a maximum number of epochs.</p>
     <p>The agent's behavior is defined within the action() method of the QLearningBehaviour class. It continues until the maximum number of epochs is reached. In each epoch, the agent resets its state and takes actions until it reaches the goal state. The Q-values are updated during this process.</p>
     <p>After the Q-learning process is completed, the agent displays the final Q-values stored in the Q-table. It then demonstrates the learned behavior by executing actions in the grid environment until it reaches the goal state.<br>
 Overall, this code implements a Q-learning agent that learns to navigate a grid-based environment and updates its Q-values to optimize its actions based on the rewards received.</p>
   </li>
+  <li><h3 id="demo">Demonstration </h3>
+    <ul>
+      <li>
+      <h3 id="jade">Jade Interface </h3>
+    <img src="/QLearning/JadeInterface.PNG" />
+      </li>
+      <li>
+      <h3 id="Execution">Execution</h3>
+    <img src="/QLearning/demo1.PNG" /><br>
+    <img src="/QLearning/demo2.PNG" />
+      </li>
+    </ul>
+  </li>
 </ul>
 <h1 id="Conclusion">Conclusion</h1>
-<p>The Q-Learning algorithm is a powerful technique for training agents to make optimal decisions in complex environments. By learning action-value</p>
-
+<p>In conclusion, the Q-learning algorithm has proven to be a valuable approach for solving reinforcement learning problems in multi-agent systems. By using a combination of exploration and exploitation strategies, Q-learning agents can learn optimal policies that maximize their cumulative rewards in a dynamic and interactive environment. The Q-learning algorithm enables agents to update their Q-values based on observed rewards and make informed decisions in response to changing circumstances.</p>
+<p>In multi-agent systems, Q-learning provides a framework for agents to learn and adapt their behaviors in a collaborative or competitive setting. Each agent can independently learn its own Q-values, allowing them to optimize their actions while interacting with other agents. This decentralized learning approach can lead to emergent behavior and the discovery of cooperative or competitive strategies among the agents.</p>
+<p>By combining the Q-learning algorithm with the capabilities of multi-agent systems, complex problems that involve coordination, resource allocation, negotiation, and other collaborative or competitive tasks can be effectively addressed. Q-learning agents in multi-agent systems can learn from their experiences, adapt to dynamic environments, and collectively optimize their actions to achieve individual and collective goals.</p>
+<p>Overall, the integration of Q-learning algorithms into multi-agent systems offers a powerful methodology for developing intelligent and adaptive systems capable of solving complex real-world problems. It enables agents to learn from their interactions and leverage the collective intelligence of the system to achieve superior performance and outcomes.</p>
 
 
