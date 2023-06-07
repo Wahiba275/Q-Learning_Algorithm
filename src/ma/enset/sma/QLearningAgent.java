@@ -16,13 +16,13 @@ public class QLearningAgent extends Agent {
     private int stateI;
     private int stateJ;
     protected void setup() {
-        actions = new int[][]{
+        actions = new int[][]{// Table of actions
                 {0, -1}, // left
                 {0, 1}, // right
                 {1, 0}, // bottom
                 {-1, 0} // top
         };
-        grid = new int[][]{
+        grid = new int[][]{// table of grids
                 {0, 0, 1},
                 {0, -1, 0},
                 {0, 0, 0}
